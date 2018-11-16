@@ -1,27 +1,25 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
-using Microsoft.Extensions.Logging;
 
-namespace NameSorter
+namespace NameSorter.Repositories
 {
-    public class ReadFromFile
+    public class GetUnsortedListOfNames
     {
-        readonly ILogger<ReadFromFile> _logger;
 
-        public ReadFromFile(ILogger<ReadFromFile> logger)
+        public GetUnsortedListOfNames()
         {
-            _logger = logger;
         }
 
-        public ArrayList ReadUnsortedNameList(string fileName)
+        public List<Person> ReadFromFile(string fileName)
         {
             try
             {
                 using (StreamReader streamReader = new StreamReader(fileName))
                 {
                     long position = 0;
-                    ArrayList unsortedNamesList = new ArrayList();
+                    List<Person> unsortedNamesList = new List<Person>();
                     while (streamReader.Peek() >= 0)
                     {
                         String fullName = streamReader.ReadLine();

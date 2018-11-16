@@ -1,11 +1,5 @@
 ﻿<Properties StartupConfiguration="{AB81A691-95FF-4169-A75B-30B029FE3D49}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="NameSorter/Services/WriteToFile.cs">
-    <Files>
-      <File FileName="NameSorter/Program.cs" Line="8" Column="6" />
-      <File FileName="NameSorter/FileService.cs" Line="8" Column="16" />
-      <File FileName="NameSorter/Services/WriteToFile.cs" Line="17" Column="77" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
