@@ -1,0 +1,2 @@
+# GlobalXCodingAssessment
+GlobalX Coding Challenge 
