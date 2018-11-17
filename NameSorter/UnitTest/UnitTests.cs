@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 
-namespace UnitTest
+namespace NameSorterTester
 {
     public class UnitTests
     {

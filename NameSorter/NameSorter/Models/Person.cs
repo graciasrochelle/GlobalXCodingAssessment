@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NameSorter
+﻿namespace NameSorter
 {
     public class Person
     {

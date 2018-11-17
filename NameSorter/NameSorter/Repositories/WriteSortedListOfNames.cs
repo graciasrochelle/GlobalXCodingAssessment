@@ -30,8 +30,8 @@ namespace NameSorter.Repositories
             }
             catch (Exception e)
             {
-                Console.WriteLine("The file could not be written:");
-                Console.WriteLine(e.Message);
+                NLog.LogManager.GetCurrentClassLogger().Fatal(e.Message);
+                Console.WriteLine("The file could not be written! Check logs for more details.\nExiting program...");
             }
             return false;
         }

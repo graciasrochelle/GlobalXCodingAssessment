@@ -1,10 +1,11 @@
-/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/obj/Debug/netcoreapp2.1/NameSorter.csproj.CoreCompileInputs.cache
-/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/obj/Debug/netcoreapp2.1/NameSorter.AssemblyInfoInputs.cache
-/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/obj/Debug/netcoreapp2.1/NameSorter.AssemblyInfo.cs
 /Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/bin/Debug/netcoreapp2.1/NameSorter.deps.json
 /Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/bin/Debug/netcoreapp2.1/NameSorter.runtimeconfig.json
 /Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/bin/Debug/netcoreapp2.1/NameSorter.runtimeconfig.dev.json
 /Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/bin/Debug/netcoreapp2.1/NameSorter.dll
 /Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/bin/Debug/netcoreapp2.1/NameSorter.pdb
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/obj/Debug/netcoreapp2.1/NameSorter.csproj.CoreCompileInputs.cache
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/obj/Debug/netcoreapp2.1/NameSorter.AssemblyInfoInputs.cache
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/obj/Debug/netcoreapp2.1/NameSorter.AssemblyInfo.cs
 /Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/obj/Debug/netcoreapp2.1/NameSorter.dll
 /Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/obj/Debug/netcoreapp2.1/NameSorter.pdb
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/obj/Debug/netcoreapp2.1/NameSorter.csprojAssemblyReference.cache

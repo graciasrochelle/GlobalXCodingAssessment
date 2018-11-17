@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.IO;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using NLog.Extensions.Logging;
 
 namespace NameSorter
 {
@@ -11,41 +6,34 @@ namespace NameSorter
     {
         static void Main(string[] args)
         {
-            var servicesProvider = BuildDi();
-            var runner = servicesProvider.GetRequiredService<Runner>();
-
-            runner.DoAction("Action1");
-
-            NLog.LogManager.Shutdown();
-
-
             Console.ForegroundColor = ConsoleColor.Green;
-            new NameSorterService().StartNameSorter();
+            var logger = NLog.LogManager.GetCurrentClassLogger();
+            if (args.Length < 2)
+            {
+                logger.Error("Please pass valid arguments!");
+                logger.Info("\nArgument 1 : name-soter \nArgument 2 : input filename");
+                Console.WriteLine("Program exiting!");
+            }else{
+                if (args[0] != null && args[1] != null)
+                {
+
+                    var programName = args[0];
+                    var inputFileName = args[1];
+
+                    switch (programName)
+                    {
+                        case "name-sorter":
+                            new NameSorterService(inputFileName).StartNameSorter();
+                            break;
+                        default:
+                            Console.WriteLine("Please pass correct arguments!");
+                            NLog.LogManager.GetCurrentClassLogger().Fatal("Arguments miss match!\nArgument 1 : name-soter and Argument 2 : input filename");
+                            break;
+                    }
+                }
+            }
+            NLog.LogManager.Shutdown();
             Console.ResetColor();
-            Console.WriteLine("Press ANY key to exit");
-            Console.ReadLine();
-        }
-
-        private static IServiceProvider BuildDi()
-        {
-            var services = new ServiceCollection();
-
-            //Runner is the custom class
-            services.AddTransient<Runner>();
-
-            services.AddSingleton<ILoggerFactory, LoggerFactory>();
-            services.AddSingleton(typeof(ILogger<>), typeof(Logger<>));
-            services.AddLogging((builder) => builder.SetMinimumLevel(LogLevel.Trace));
-
-            var serviceProvider = services.BuildServiceProvider();
-
-            var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
-
-            //configure NLog
-            loggerFactory.AddNLog(new NLogProviderOptions { CaptureMessageTemplates = true, CaptureMessageProperties = true });
-            NLog.LogManager.LoadConfiguration("nlog.config");
-
-            return serviceProvider;
         }
     }
 }

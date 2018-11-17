@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorter", "NameSorter\NameSorter.csproj", "{AB81A691-95FF-4169-A75B-30B029FE3D49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{59E7FAC6-1BFF-4D38-847F-6E2F9285C203}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorterTester", "UnitTest\NameSorterTester.csproj", "{59E7FAC6-1BFF-4D38-847F-6E2F9285C203}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

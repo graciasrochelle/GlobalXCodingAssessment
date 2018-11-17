@@ -40,8 +40,8 @@ namespace NameSorter.Repositories
             }
             catch (Exception e)
             {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
+                NLog.LogManager.GetCurrentClassLogger().Fatal(e);
+                Console.WriteLine("Error Occured! Check logs for more details.\nExiting program...");
             }
             return null;
         }
