@@ -6148,11 +6148,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/UnitTest/NameSorterTester.csproj",
+      "projectUniqueName": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/UnitTest/NameSorterTester.csproj",
       "projectName": "NameSorterTester",
-      "projectPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/UnitTest/NameSorterTester.csproj",
+      "projectPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/UnitTest/NameSorterTester.csproj",
       "packagesPath": "/Users/rochellegracias/.nuget/packages/",
-      "outputPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/UnitTest/obj",
+      "outputPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/UnitTest/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -6169,8 +6169,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/NameSorter.csproj": {
-              "projectPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/NameSorter.csproj"
+            "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter.csproj": {
+              "projectPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter.csproj"
             }
           }
         }

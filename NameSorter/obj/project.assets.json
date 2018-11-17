@@ -1049,11 +1049,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/NameSorter.csproj",
+      "projectUniqueName": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter.csproj",
       "projectName": "NameSorter",
-      "projectPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/NameSorter.csproj",
+      "projectPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter.csproj",
       "packagesPath": "/Users/rochellegracias/.nuget/packages/",
-      "outputPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter/obj",
+      "outputPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
