@@ -5,5 +5,5 @@ Build a name sorter. Given a set of names, order that set first by last name, th
 
 ### How to use?
 
-Step 1: Clone the project
-Step 2: ```dotnet NameSorter.dll name-sorter unsorted-names-list.txt```
+- Step 1: Clone the project
+- Step 2: ```dotnet NameSorter.dll name-sorter unsorted-names-list.txt```
