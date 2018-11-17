@@ -1053,13 +1053,13 @@
       "projectName": "NameSorter",
       "projectPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/NameSorter.csproj",
       "packagesPath": "/Users/rochellegracias/.nuget/packages/",
-      "outputPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/obj",
+      "outputPath": "/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorter/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/rochellegracias/.config/NuGet/NuGet.Config"
+        "/Users/rochellegracias/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
@@ -1083,21 +1083,20 @@
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",
-            "version": "2.1.1"
-          },
-          "NLog.Extensions.Logging": {
-            "target": "Package",
-            "version": "1.3.0"
+            "version": "[2.1.1, )"
           },
           "Microsoft.Extensions.Logging": {
             "target": "Package",
-            "version": "2.1.1"
+            "version": "[2.1.1, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
-            "version": "2.1.0",
+            "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "NLog.Extensions.Logging": {
+            "target": "Package",
+            "version": "[1.3.0, )"
           }
         },
         "imports": [
