@@ -1,3 +1,8 @@
 
-.vs/NameSorter/xs/sqlite3/db.lock
 .vscode/tasks.json
+.vs/
+NameSorter/bin
+NameSorter/obj
+NameSorter/obj/Debug
+UnitTest/bin
+UnitTest/obj/Debug
