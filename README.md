@@ -46,12 +46,10 @@ _Note: Argument 1 is the feature name and Argument 2 is the filename that contai
 
 ## Tests
 **Run tests via terminal**
-- Step 1:
-> cd GlobalXCodingAssessment
-
-- Step 2: 
-> dotnet test UnitTest/NameSorterTester.csproj
-
+```
+cd GlobalXCodingAssessment
+dotnet test UnitTest/NameSorterTester.csproj
+```
 **Run tests via IDE**
 - Step 1: Open cloned project
 - Step 2: Select `NameSorterTester-UnitTests`
@@ -60,13 +58,16 @@ _Note: Argument 1 is the feature name and Argument 2 is the filename that contai
 ## How to use?
 _Please ensure correct filename is passed_
 **Run project via terminal**
-> git clone git@github.com:graciasrochelle/GlobalXCodingAssessment.git
-> cd GlobalXCodingAssessment
-> cd NameSorter
-> dotnet build
-> dotnet run name-sorter ./unsorted-names-list.txt
-
+```
+git clone git@github.com:graciasrochelle/GlobalXCodingAssessment.git
+cd GlobalXCodingAssessment
+cd NameSorter
+dotnet build
+dotnet run name-sorter ./unsorted-names-list.txt
+```
 **Run test via terminal**
-> cd GlobalXCodingAssessment
-> dotnet build
-> dotnet test UnitTest/NameSorterTester.csproj
+```
+cd GlobalXCodingAssessment
+dotnet build
+dotnet test UnitTest/NameSorterTester.csproj
+```
