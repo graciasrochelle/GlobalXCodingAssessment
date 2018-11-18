@@ -7,3 +7,9 @@ NameSorterTest/bin
 NameSorterTest/obj
 .DS_Store
 NameSorter/.DS_Store
+NameSorterTester/obj/project.assets.json
+NameSorterTester/obj/NameSorterTester.csproj.nuget.g.props
+*.targets
+*.cache
+.DS_Store
+NameSorter/.DS_Store
