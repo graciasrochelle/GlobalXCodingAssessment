@@ -15,7 +15,7 @@ Implemented using Dependency Injection to achieve safe, reliable and secure sour
 - [Visual Studio for MAC](https://tutorials.visualstudio.com/vs4mac-install/install)
 
 ### Logger
-- [NLog](https://nlog-project.org/)
+- [NLog](https://github.com/NLog/NLog.Extensions.Logging/wiki/Getting-started-with-.NET-Core-2---Console-application)
 
 ### Testing Framework
 - [xUnit.net](https://xunit.github.io/docs/getting-started-dotnet-core)
