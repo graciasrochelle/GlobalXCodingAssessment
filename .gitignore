@@ -1,8 +1,8 @@
 
 .vscode/tasks.json
 .vs/
+.DS_Store
 NameSorter/bin
 NameSorter/obj
-NameSorter/obj/Debug
 NameSorterTest/bin
-NameSorterTest/obj/Debug
+NameSorterTest/obj

@@ -32,7 +32,7 @@ namespace NameSorter
                     foreach (Person person in _unsortedListOfNames)
                     {
                         Console.WriteLine(person);
-                        NLog.LogManager.GetCurrentClassLogger().Info(person);
+                        NLog.LogManager.GetCurrentClassLogger().Debug(person);
                     }
                     _sortedListOfNames = _nameSorter.GetSortedListOfNames(_unsortedListOfNames);
                     Console.WriteLine("------------------------------");
