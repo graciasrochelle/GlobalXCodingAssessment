@@ -21,13 +21,12 @@ Implemented using Dependency Injection to achieve safe, reliable and secure sour
 - [xUnit.net](https://xunit.github.io/docs/getting-started-dotnet-core)
 
 ## Features
-- Takes two command line arguments:
+- Takes two command line arguments - Argument 1 is the feature name and Argument 2 is the filename that contains the Names to be sorted:
 > dotnet run name-sorter ./unsorted-names-list.txt
 
 Or set Visual Studion environment variables
 > Project -> Options -> Run -> Configuration -> Default -> Arguments -> OK
 
-_Note: Argument 1 is the feature name and Argument 2 is the filename that contains the Names to be sorted._
 - The program reads the file and sorts the set of names by last name. A name must have at least 1 given name and may have up to 3 given names
 - The program then writes the sorted set of names to a file `sorted-names-list.txt`
 - The program also prints the unsorted and sorted set of names on the screen once the program executes
@@ -40,7 +39,7 @@ _Note: Argument 1 is the feature name and Argument 2 is the filename that contai
 - Step 5: Run project
 
 **Dependencies**
-- .Net version : 2.1.302 
+- .Net version : `2.1.302`
 - NLog
 - xUnit
 
@@ -56,7 +55,8 @@ dotnet test UnitTest/NameSorterTester.csproj
 - Step 3: Run project
 
 ## How to use?
-_Please ensure correct filename is passed_
+_Please ensure valid filename is passed_
+
 **Run project via terminal**
 ```
 git clone git@github.com:graciasrochelle/GlobalXCodingAssessment.git
