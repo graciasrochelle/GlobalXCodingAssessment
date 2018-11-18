@@ -16,9 +16,9 @@ Implemented using Dependency Injection to achieve safe, reliable and secure sour
 
 ### Logger
 - [NLog](https://github.com/NLog/NLog.Extensions.Logging/wiki/Getting-started-with-.NET-Core-2---Console-application)
-```
-> nlog.config
 
+**nlog.config** _Add nlog.config in the same location as NameSorter.dll_
+```
 <?xml version="1.0" encoding="utf-8" ?>
 <nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -37,8 +37,6 @@ Implemented using Dependency Injection to achieve safe, reliable and secure sour
     </rules>
 </nlog>
 ```
-_Add nlog.config in the same location as NameSorter.dll_
-
 ### Testing Framework
 - [xUnit.net](https://xunit.github.io/docs/getting-started-dotnet-core)
 
