@@ -16,6 +16,28 @@ Implemented using Dependency Injection to achieve safe, reliable and secure sour
 
 ### Logger
 - [NLog](https://github.com/NLog/NLog.Extensions.Logging/wiki/Getting-started-with-.NET-Core-2---Console-application)
+```
+> nlog.config
+
+<?xml version="1.0" encoding="utf-8" ?>
+<nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <targets>
+        <default-target-parameters xsi:type="File" keepFileOpen="false"/>
+        <target name="logdebug" xsi:type="File"
+                layout="DateTime::${longdate}||LogLevel::${level}||Logger::${logger}||${message} ${exception:format=ToString}" 
+                fileName="../../../Logs/${shortdate}.log"/>
+        <target name="logfatal" xsi:type="File" fileName="../../../Logs/FatalLog.log" layout="DateTime::${longdate}||${message} ${exception:format=tostring}"/>
+    </targets>
+
+    <rules>
+        <logger name="*" minlevel="Debug" writeTo="logdebug" />
+        <logger name="*" minlevel="Fatal" writeTo="logfatal" />
+    </rules>
+</nlog>
+```
+_Add nlog.config in the same location as NameSorter.dll_
 
 ### Testing Framework
 - [xUnit.net](https://xunit.github.io/docs/getting-started-dotnet-core)
