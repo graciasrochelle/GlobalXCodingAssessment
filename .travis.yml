@@ -4,4 +4,4 @@ dotnet: 2.1.302
 
 script:
  - dotnet build
- - dotnet test NameSorterTest/NameSorterTester.csproj
+ - dotnet test NameSorterTester/NameSorterTester.csproj
