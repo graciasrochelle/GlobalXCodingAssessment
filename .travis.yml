@@ -1,12 +1,13 @@
 language: csharp
-mono: none
+env:
+  global:
+    - CODECOV_TOKEN=cf125eb8-647f-435f-84b4-999b341585ee
+mono: latest
 dotnet: 2.1.302
-
 before_build:
  - nuget restore
-
 script:
  - dotnet build
  - dotnet test NameSorterTester/NameSorterTester.csproj
- - OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\NameSorter\bin\Debug\NameSorter.dll -noshadow" -filter:"+[NameSorterTester*]* -[NameSorter*]*" -output:".\MyProject_coverage.xml"
+ - OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\NameSorter\bin\Debug\netcoreapp2.1\NameSorter.dll -noshadow" -filter:"+[NameSorterTester*]* -[NameSorter*]*" -output:".\MyProject_coverage.xml"
  - codecov -f "MyProject_coverage.xml
