@@ -1,11 +1,11 @@
 language: csharp
-env:
-  global:
-    - CODECOV_TOKEN=cf125eb8-647f-435f-84b4-999b341585ee
 mono: latest
 dotnet: 2.1.302
 before_build:
  - nuget restore
+ - choco install opencover.portable
+ - choco install codecov
+
 script:
  - dotnet build
  - dotnet test NameSorterTester/NameSorterTester.csproj
