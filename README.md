@@ -4,7 +4,7 @@ Build a name sorter. Given a set of names, order that set first by last name, th
 ## Motivation
 The GlobalX coding assessment for the role of a Junior Engineer.
 
-## Build status [![Build Status](https://travis-ci.com/graciasrochelle/GlobalXCodingAssessment.svg?branch=master)](https://travis-ci.com/graciasrochelle/GlobalXCodingAssessment)[![codecov](https://codecov.io/gh/graciasrochelle/GlobalXCodingAssessment/branch/master/graph/badge.svg)](https://codecov.io/gh/graciasrochelle/GlobalXCodingAssessment)
+## Build status [![Build Status](https://travis-ci.com/graciasrochelle/GlobalXCodingAssessment.svg?branch=master)](https://travis-ci.com/graciasrochelle/GlobalXCodingAssessment)
 Build status of continus integration i.e. travis. Travis CI is configured by adding a file named .travis.yml.
 
 ## Code style
