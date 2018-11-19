@@ -12,19 +12,19 @@ namespace NameSorter.Controllers
         {
         }
 
-        public List<Person> GetSortedListOfNames(List<Person> unsortedListOfNames)
+        public List<Person> GetListOfNames(List<Person> listOfNames)
         {
-            return (new GetSortedListOfNames().SortNames(unsortedListOfNames));
+            return (new GetSortedListOfNames().SortNames(listOfNames));
         }
 
-        public List<Person> GetUnsortedNameList(string fileName)
+        public List<Person> GetListOfNames(string fileName)
         {
             return (new GetUnsortedListOfNames().ReadFromFile(fileName));
         }
 
-        public Boolean WriteSortedListOfNames(string fileName, List<Person> sortedListOfNames)
+        public Boolean WriteListOfNames(string fileName, List<Person> listOfNames)
         {
-            return (new WriteSortedListOfNames().WriteToFile(fileName, sortedListOfNames));
+            return (new WriteSortedListOfNames().WriteToFile(fileName, listOfNames));
         }
     }
 }

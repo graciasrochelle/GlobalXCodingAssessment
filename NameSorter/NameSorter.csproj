@@ -22,5 +22,6 @@
     <None Remove="NLog.Config" />
     <None Remove="nlog.config" />
     <None Remove="Logs\2018-11-18.log" />
+    <None Remove="Logs\2018-11-18.txt" />
   </ItemGroup>
 </Project>

@@ -12,7 +12,7 @@ namespace NameSorter
             {
                 logger.Error("Please pass valid arguments!");
                 logger.Info("\nArgument 1 : name-soter \nArgument 2 : input filename");
-                Console.WriteLine("Program exiting!");
+                Console.WriteLine("\nArgument 1 : name-soter \nArgument 2 : input filename.\nProgram exiting!");
             }else{
                 if (args[0] != null && args[1] != null)
                 {

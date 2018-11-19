@@ -14,7 +14,12 @@ namespace NameSorter.Repositories
         public List<Person> SortNames(List<Person> unsortedListOfNames)
         {
             try{
-                List<Person> sortedNames = unsortedListOfNames.OrderBy(p => p.LastName).ToList();
+                unsortedListOfNames.Sort(delegate (Person person1, Person person2)
+                {
+                    int compareLastName = string.Compare(person1.LastName, person2.LastName, StringComparison.CurrentCulture);
+                    return compareLastName == 0 ? -1 : compareLastName;
+                });
+                List<Person> sortedNames = unsortedListOfNames;
                 return sortedNames;
             }
             catch(Exception ex){

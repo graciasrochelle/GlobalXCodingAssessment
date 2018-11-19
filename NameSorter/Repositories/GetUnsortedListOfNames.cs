@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace NameSorter.Repositories
 {
@@ -18,22 +19,24 @@ namespace NameSorter.Repositories
             {
                 using (StreamReader streamReader = new StreamReader(fileName))
                 {
-                    long position = 0;
                     List<Person> unsortedNamesList = new List<Person>();
                     while (streamReader.Peek() >= 0)
                     {
-                        String fullName = streamReader.ReadLine();
-                        string[] name = fullName.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-                        Person person = new Person();
-                        for (int i = 0; i < name.Length - 1; i++)
+                        String line = streamReader.ReadLine();
+                        string[] fullName = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                        Boolean isGivenNameValid = new ValidateFullName().IsFullNameValid(fullName);
+                        if (isGivenNameValid)
                         {
-                            person.GivenNames += name[i] + " ";
+                            string lastName = fullName[fullName.Length - 1];
+                            fullName = fullName.Take(fullName.Count() - 1).ToArray();
+                            string[] givenNames = new string[fullName.Length];
+                            for (int i = 0; i < givenNames.Length; i++)
+                            {
+                                givenNames[i] = fullName[i];
+                            }
+                            Person person = new Person(givenNames, lastName);
+                            unsortedNamesList.Add(person);
                         }
-                        person.Position = position;
-                        person.GivenNames = person.GivenNames.Trim();
-                        person.LastName = name[name.Length - 1];
-                        unsortedNamesList.Add(person);
-                        position++;
                     }
                     return unsortedNamesList;
                 }

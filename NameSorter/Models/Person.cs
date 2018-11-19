@@ -2,12 +2,22 @@
 {
     public class Person
     {
-        public long Position { get; set; }
-        public string GivenNames { get; set; }
-        public string LastName { get; set; }
+        public Person(string[] givenNames, string lastName)
+        {
+            GivenNames = givenNames;
+            LastName = lastName;
+        }
+
+        public string[] GivenNames { get; private set; }
+        public string LastName { get; private set; }
+
         public override string ToString()
         {
-            return GivenNames + " " + LastName;
+            string givenNames = "";
+            for (int i = 0; i < GivenNames.Length;i++){
+                givenNames += GivenNames[i] + " ";
+            }
+            return givenNames + LastName;
         }
     }
 }

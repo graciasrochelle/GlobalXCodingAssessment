@@ -12,18 +12,18 @@ namespace NameSorter.Repositories
         {
         }
 
-        public Boolean WriteToFile(string fileName, List<Person> sortedListOfNames)
+        public Boolean WriteToFile(string fileName, List<Person> listOfNames)
         {
             try
             {
                 using (StreamWriter writetext = new StreamWriter(fileName))
                 {
-                    for (int i = 0; i < sortedListOfNames.Count; i++)
+                    for (int i = 0; i < listOfNames.Count; i++)
                     {
-                        if (i != sortedListOfNames.Count - 1)
-                            writetext.WriteLine(string.Format(sortedListOfNames[i].ToString()));
+                        if (i != listOfNames.Count - 1)
+                            writetext.WriteLine(string.Format(listOfNames[i].ToString()));
                         else
-                            writetext.Write(string.Format(sortedListOfNames[i].ToString()));
+                            writetext.Write(string.Format(listOfNames[i].ToString()));
                     }
                     return true;
                 }

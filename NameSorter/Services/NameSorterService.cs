@@ -10,11 +10,10 @@ namespace NameSorter
     {
         readonly string _filename = "sorted-names-list.txt";
 
-        private readonly string _inputFilePath;
-        private readonly string _outputFilePath;
-        private List<Person> _unsortedListOfNames;
-        private List<Person> _sortedListOfNames;
-        private readonly INameSorter _nameSorter;
+        readonly string _inputFilePath;
+        readonly string _outputFilePath;
+
+        readonly INameSorter _nameSorter;
 
         public NameSorterService(string inputFileName){
             _nameSorter = new NameSorterController();
@@ -25,23 +24,23 @@ namespace NameSorter
         public void StartNameSorter()
         {
             try{
-                _unsortedListOfNames = _nameSorter.GetUnsortedNameList(_inputFilePath);
+                List<Person> unsortedListOfNames = _nameSorter.GetListOfNames(_inputFilePath);
 
-                if(_unsortedListOfNames != null){
+                if(unsortedListOfNames != null){
                     Console.WriteLine("~~!Unsorted List of Names!~~");
-                    foreach (Person person in _unsortedListOfNames)
+                    foreach (Person person in unsortedListOfNames)
                     {
                         Console.WriteLine(person);
                         NLog.LogManager.GetCurrentClassLogger().Debug(person);
                     }
-                    _sortedListOfNames = _nameSorter.GetSortedListOfNames(_unsortedListOfNames);
+                    List<Person> sortedListOfNames = _nameSorter.GetListOfNames(unsortedListOfNames);
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("~~!Sorted List of Names!~~");
-                    foreach (Person person in _sortedListOfNames)
+                    foreach (Person person in sortedListOfNames)
                     {
                         Console.WriteLine(person);
                     }
-                    _nameSorter.WriteSortedListOfNames(_outputFilePath, _sortedListOfNames);
+                    _nameSorter.WriteListOfNames(_outputFilePath, sortedListOfNames);
                 }
                 else{
                     throw new Exception();
