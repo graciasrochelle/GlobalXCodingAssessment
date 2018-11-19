@@ -8,3 +8,5 @@ before_build:
 script:
  - dotnet build
  - dotnet test NameSorterTester/NameSorterTester.csproj
+ - OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\NameSorter\bin\Debug\NameSorter.dll -noshadow" -filter:"+[NameSorterTester*]* -[NameSorter*]*" -output:".\MyProject_coverage.xml"
+ - codecov -f "MyProject_coverage.xml
