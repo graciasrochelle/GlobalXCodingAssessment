@@ -1,6 +1,9 @@
 ## The Goal: Name Sorter 
 Build a name sorter. Given a set of names, order that set first by last name, then by any given names the person my have. A name must have at least 1 given name and may have up to 3 given names.
 
+## ScreenShot of output
+![alt text](ConsoleImage.png "Console Image")
+
 ## Motivation
 The GlobalX coding assessment for the role of a Junior Engineer.
 
