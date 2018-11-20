@@ -26,7 +26,7 @@ namespace NameSorter.Services
             Boolean isFileExits = _fileSystem.ValidateIfFileExists(inputFileName);
             if(isFileExits){
                 String inputFilePath = Path.GetFullPath(inputFileName);
-                Console.WriteLine(inputFileName + " was read!");
+                Console.WriteLine(inputFileName + " was read!\n");
                 return _fileSystem.GetListOfNames(inputFileName);
             }
             return null;
@@ -44,8 +44,8 @@ namespace NameSorter.Services
 
             if (isFileWritten)
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("The names was written to " + outputFilePath);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\nThe names was written to " + outputFilePath);
                 Console.ResetColor();
                 return true;
             }

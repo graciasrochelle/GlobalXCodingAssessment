@@ -16,23 +16,16 @@ namespace NameSorter.Repositories
         /// <returns><c>true</c>, if to console was writed, <c>false</c> otherwise.</returns>
         /// <param name="unsortedListOfNames">Unsorted list of names.</param>
         /// <param name="sortedListOfNames">Sorted list of names.</param>
-        public Boolean WriteToConsole(List<Person> unsortedListOfNames, List<Person> sortedListOfNames)
+        public Boolean WriteToConsole(string message,List<Person> listOfNames)
         {
             try
             {
-                Console.WriteLine("~~!Unsorted List of Names!~~");
-                foreach (Person person in unsortedListOfNames)
+                Console.WriteLine("\n~~!" + message + "!~~");
+                foreach (Person person in listOfNames)
                 {
                     Console.WriteLine(person);
                 }
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("\n--------After Sorting-----\n");
-                Console.WriteLine("~~!Sorted List of Names!~~");
-                foreach (Person person in sortedListOfNames)
-                {
-                    Console.WriteLine(person);
-                }
-                Console.ResetColor();
+                Console.WriteLine("\n");
                 NLog.LogManager.GetCurrentClassLogger().Info("Write to console was successful!");
                 return true;
             }

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using NameSorter.Controllers;
 using NameSorter.Interfaces;
 using NameSorter.Services;
+using NameSorter.Utils;
 
 namespace NameSorter
 {
@@ -22,12 +22,24 @@ namespace NameSorter
         public void StartNameSorter(string filename)
         {
             try{
+                FileSystemService fileSystem = new FileSystemService();
 
-                List<Person> unsortedListOfNames = (new FileSystemService().ReadFromFile(filename));
+                List<Person> unsortedListOfNames = fileSystem.ReadFromFile(filename);
+
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                _nameSorter.WriteToScreen(Constants.MessageBeforeSorting, unsortedListOfNames);
+                Console.ResetColor();
+
                 if (unsortedListOfNames != null){
+
                     List<Person> sortedListOfNames = _nameSorter.GetListOfNames(unsortedListOfNames);
-                    Boolean isDisplayedOnScreen = _nameSorter.WriteToScreen(unsortedListOfNames, sortedListOfNames);
-                    Boolean isWrittenToFile = (new FileSystemService().WriteToFile(sortedListOfNames));
+
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Boolean isDisplayedOnScreen = _nameSorter.WriteToScreen(Constants.MessageAfterSorting, sortedListOfNames);
+                    Console.ResetColor();
+
+                    Boolean isWrittenToFile = fileSystem.WriteToFile(sortedListOfNames);
+
                     if (!isDisplayedOnScreen || !isWrittenToFile)
                     {
                         throw new Exception();

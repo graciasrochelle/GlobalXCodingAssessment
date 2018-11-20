@@ -17,9 +17,9 @@ namespace NameSorter.Controllers
             return (new GetSortedListOfNames().SortNames(listOfNames));
         }
 
-        public Boolean WriteToScreen(List<Person> unsortedListOfPeople, List<Person> sortedListOfPeople)
+        public Boolean WriteToScreen(string message, List<Person> listOfNames)
         {
-            return (new WriteToScreen().WriteToConsole(unsortedListOfPeople, sortedListOfPeople));
+            return (new WriteToScreen().WriteToConsole(message, listOfNames));
         }
     }
 }

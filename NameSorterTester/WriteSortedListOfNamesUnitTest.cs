@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using NameSorter;
 using NameSorter.Controllers;
-using NameSorter.Interfaces;
-using NameSorter.Repositories;
 using Xunit;
 
 namespace NameSorterTester
@@ -13,7 +11,7 @@ namespace NameSorterTester
         [Fact]
         public void Test()
         {
-            string outputFileName = "sorted-names-list.txt";
+            string outputFileName = "unit-test-sorted-names-list.txt";
 
             var parent = System.IO.Directory
                                .GetParent(Environment.CurrentDirectory)

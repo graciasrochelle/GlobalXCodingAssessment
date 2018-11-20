@@ -29,7 +29,7 @@
                         switch (programName)
                         {
                             case "name-sorter":
-                                new NameSorterService().StartNameSorter(inputFileName);
+                                new NameSorterService().StartNameSorter(System.IO.Path.GetFileName(inputFileName));
                                 break;
                             default:
                                 Console.WriteLine("Please pass correct arguments!\n Set env. variables:: name-sorter ./unsorted-names-list.txt");

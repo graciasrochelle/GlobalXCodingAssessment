@@ -7,5 +7,8 @@ namespace NameSorter.Utils
         public const int MinNumberOfGivenNames = 1;
         public const int MaxNumberOfGivenNames = 3;
         public const int MinNumberOfNames = 2;
+
+        public const string MessageBeforeSorting = "Before Sorting Names";
+        public const string MessageAfterSorting = "After Sorting Names";
     }
 }

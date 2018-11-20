@@ -24,6 +24,7 @@
     <None Remove="nlog.config" />
     <None Remove="Logs\2018-11-18.log" />
     <None Remove="Logs\2018-11-18.txt" />
+    <None Remove="Logs\DebugLog_2018-11-21.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\FileSystem.cs" />
