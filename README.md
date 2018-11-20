@@ -27,13 +27,15 @@ Implemented using Dependency Injection to achieve safe, reliable and secure sour
         <default-target-parameters xsi:type="File" keepFileOpen="false"/>
         <target name="logdebug" xsi:type="File"
                 layout="DateTime::${longdate}||LogLevel::${level}||Logger::${logger}||${message} ${exception:format=ToString}" 
-                fileName="../../../Logs/${shortdate}.log"/>
-        <target name="logfatal" xsi:type="File" fileName="../../../Logs/FatalLog.log" layout="DateTime::${longdate}||${message} ${exception:format=tostring}"/>
+                fileName="../../../Logs/DebugLog_${shortdate}.txt"/>
+        <target name="logfatal" xsi:type="File" fileName="../../../Logs/FatalLog_${shortdate}.txt" layout="DateTime::${longdate}||${message} ${exception:format=tostring}"/>
+        <target name="loginfo" xsi:type="File" fileName="../../../Logs/InfoLog_${shortdate}.txt" layout="DateTime::${longdate}||${message}"/>
     </targets>
 
     <rules>
         <logger name="*" minlevel="Debug" writeTo="logdebug" />
         <logger name="*" minlevel="Fatal" writeTo="logfatal" />
+        <logger name="*" minlevel="Info" writeTo="loginfo" />
     </rules>
 </nlog>
 ```
@@ -42,10 +44,13 @@ Implemented using Dependency Injection to achieve safe, reliable and secure sour
 
 ## Features
 - Takes two command line arguments - Argument 1 is the feature name and Argument 2 is the filename that contains the Names to be sorted:
-> dotnet run name-sorter ./unsorted-names-list.txt
+```
+cd GlobalXCodingAssessment/NameSorter
+dotnet run name-sorter ./unsorted-names-list.txt
+```
 
 Or set Visual Studion environment variables
-> Project -> Options -> Run -> Configuration -> Default -> Arguments -> OK
+> Project -> Options -> Run -> Configuration -> Default -> Arguments -> `name-sorter ./unsorted-names-list.txt` -> OK
 
 - The program reads the file and sorts the set of names by last name. A name must have at least 1 given name and may have up to 3 given names
 - The program then writes the sorted set of names to a file `sorted-names-list.txt`
@@ -58,16 +63,20 @@ Or set Visual Studion environment variables
 - Step 4: Clean and Build project
 - Step 5: Run project
 
-**Dependencies**
+**Nuget Dependencies**
 - .Net version : `2.1.302`
-- NLog
-- xUnit
+- Microsoft.Extensions.DependencyInjection : `2.1.1`
+- NLog : `4.5.11`
+- NLog.Extensions.Logging : `1.3.0`
+- xUnit : `2.3.1`
+- xUnit.runner.visualstudio : `2.3.1`
+- Microsoft.NET.Test.Edk : `15.7.0`
 
 ## Tests
 **Run tests via terminal**
 ```
 cd GlobalXCodingAssessment
-dotnet test UnitTest/NameSorterTester.csproj
+dotnet test NameSorterTester/NameSorterTester.csproj
 ```
 **Run tests via IDE**
 - Step 1: Open cloned project
@@ -75,13 +84,12 @@ dotnet test UnitTest/NameSorterTester.csproj
 - Step 3: Run project
 
 ## How to use?
-_Please ensure valid filename is passed_
+_Please ensure valid filename is passed and file is placed within the NameSorter Folder_
 
 **Run project via terminal**
 ```
 git clone git@github.com:graciasrochelle/GlobalXCodingAssessment.git
-cd GlobalXCodingAssessment
-cd NameSorter
+cd GlobalXCodingAssessment/NameSorter
 dotnet build
 dotnet run name-sorter ./unsorted-names-list.txt
 ```
@@ -89,5 +97,5 @@ dotnet run name-sorter ./unsorted-names-list.txt
 ```
 cd GlobalXCodingAssessment
 dotnet build
-dotnet test UnitTest/NameSorterTester.csproj
+dotnet test NameSorterTester/NameSorterTester.csproj
 ```
