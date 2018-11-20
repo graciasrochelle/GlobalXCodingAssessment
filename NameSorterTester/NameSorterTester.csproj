@@ -16,4 +16,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NameSorter\NameSorter.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logs\" />
+  </ItemGroup>
 </Project>

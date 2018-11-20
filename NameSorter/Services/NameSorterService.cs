@@ -3,44 +3,35 @@ using System.Collections.Generic;
 using System.IO;
 using NameSorter.Controllers;
 using NameSorter.Interfaces;
+using NameSorter.Services;
 
 namespace NameSorter
 {
     public class NameSorterService
     {
-        readonly string _filename = "sorted-names-list.txt";
-
-        readonly string _inputFilePath;
-        readonly string _outputFilePath;
-
         readonly INameSorter _nameSorter;
 
-        public NameSorterService(string inputFileName){
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:NameSorter.NameSorterService"/> class.
+        /// </summary>
+        /// <param name="inputFileName">File to be sorted.</param>
+        public NameSorterService(){
             _nameSorter = new NameSorterController();
-            _inputFilePath = Path.GetFullPath(inputFileName);
-            _outputFilePath = Path.GetFullPath(_filename);
         }
 
-        public void StartNameSorter()
+        public void StartNameSorter(string filename)
         {
             try{
-                List<Person> unsortedListOfNames = _nameSorter.GetListOfNames(_inputFilePath);
 
-                if(unsortedListOfNames != null){
-                    Console.WriteLine("~~!Unsorted List of Names!~~");
-                    foreach (Person person in unsortedListOfNames)
-                    {
-                        Console.WriteLine(person);
-                        NLog.LogManager.GetCurrentClassLogger().Debug(person);
-                    }
+                List<Person> unsortedListOfNames = (new FileSystemService().ReadFromFile(filename));
+                if (unsortedListOfNames != null){
                     List<Person> sortedListOfNames = _nameSorter.GetListOfNames(unsortedListOfNames);
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("~~!Sorted List of Names!~~");
-                    foreach (Person person in sortedListOfNames)
+                    Boolean isDisplayedOnScreen = _nameSorter.WriteToScreen(unsortedListOfNames, sortedListOfNames);
+                    Boolean isWrittenToFile = (new FileSystemService().WriteToFile(sortedListOfNames));
+                    if (!isDisplayedOnScreen || !isWrittenToFile)
                     {
-                        Console.WriteLine(person);
+                        throw new Exception();
                     }
-                    _nameSorter.WriteListOfNames(_outputFilePath, sortedListOfNames);
                 }
                 else{
                     throw new Exception();

@@ -1,39 +1,45 @@
-﻿using System;
+﻿    using System;
 
-namespace NameSorter
-{
-    class Program
+    namespace NameSorter
     {
-        static void Main(string[] args)
+        class Program
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            var logger = NLog.LogManager.GetCurrentClassLogger();
-            if (args.Length < 2)
+            /// <summary>
+            /// The entry point of the program, where the program control starts and ends.
+            /// </summary>
+            /// <param name="args">Takes two command-line arguments :- argument 1 : feature name and argument 2 : input filename</param>
+            static void Main(string[] args)
             {
-                logger.Error("Please pass valid arguments!");
-                logger.Info("\nArgument 1 : name-soter \nArgument 2 : input filename");
-                Console.WriteLine("\nArgument 1 : name-soter \nArgument 2 : input filename.\nProgram exiting!");
-            }else{
-                if (args[0] != null && args[1] != null)
+                Console.ForegroundColor = ConsoleColor.Green;
+                var logger = NLog.LogManager.GetCurrentClassLogger();
+
+                if (args.Length < 2)
                 {
-
-                    var programName = args[0];
-                    var inputFileName = args[1];
-
-                    switch (programName)
+                    string errorMessage = "Please pass valid arguments!\nArgument 1 : name-soter \nArgument 2 : input filename";
+                    logger.Error(errorMessage);
+                    Console.WriteLine(errorMessage);
+                }
+                else{
+                    if (args[0] != null && args[1] != null)
                     {
-                        case "name-sorter":
-                            new NameSorterService(inputFileName).StartNameSorter();
-                            break;
-                        default:
-                            Console.WriteLine("Please pass correct arguments!");
-                            NLog.LogManager.GetCurrentClassLogger().Fatal("Arguments miss match!\nArgument 1 : name-soter and Argument 2 : input filename");
-                            break;
+
+                        var programName = args[0];
+                        var inputFileName = args[1];
+
+                        switch (programName)
+                        {
+                            case "name-sorter":
+                                new NameSorterService().StartNameSorter(inputFileName);
+                                break;
+                            default:
+                                Console.WriteLine("Please pass correct arguments!\n Set env. variables:: name-sorter ./unsorted-names-list.txt");
+                                NLog.LogManager.GetCurrentClassLogger().Fatal("Arguments miss match!\nArgument 1 : name-soter and Argument 2 : input filename");
+                                break;
+                        }
                     }
                 }
+                NLog.LogManager.Shutdown();
+                Console.ResetColor();
             }
-            NLog.LogManager.Shutdown();
-            Console.ResetColor();
         }
     }
-}

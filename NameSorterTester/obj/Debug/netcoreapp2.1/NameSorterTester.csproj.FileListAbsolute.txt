@@ -1,0 +1,17 @@
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/bin/Debug/netcoreapp2.1/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/bin/Debug/netcoreapp2.1/xunit.runner.reporters.netcoreapp10.dll
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/bin/Debug/netcoreapp2.1/xunit.runner.utility.netcoreapp10.dll
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/bin/Debug/netcoreapp2.1/NameSorterTester.deps.json
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/bin/Debug/netcoreapp2.1/NameSorterTester.runtimeconfig.json
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/bin/Debug/netcoreapp2.1/NameSorterTester.runtimeconfig.dev.json
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/bin/Debug/netcoreapp2.1/NameSorterTester.dll
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/bin/Debug/netcoreapp2.1/NameSorterTester.pdb
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/bin/Debug/netcoreapp2.1/NameSorter.dll
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/bin/Debug/netcoreapp2.1/NameSorter.pdb
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/obj/Debug/netcoreapp2.1/NameSorterTester.csprojAssemblyReference.cache
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/obj/Debug/netcoreapp2.1/NameSorterTester.csproj.CoreCompileInputs.cache
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/obj/Debug/netcoreapp2.1/NameSorterTester.AssemblyInfoInputs.cache
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/obj/Debug/netcoreapp2.1/NameSorterTester.AssemblyInfo.cs
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/obj/Debug/netcoreapp2.1/NameSorterTester.csproj.CopyComplete
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/obj/Debug/netcoreapp2.1/NameSorterTester.dll
+/Users/rochellegracias/Documents/GitHub/GlobalXCodingAssessment/NameSorterTester/obj/Debug/netcoreapp2.1/NameSorterTester.pdb

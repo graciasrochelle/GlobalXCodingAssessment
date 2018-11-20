@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,8 +10,14 @@ namespace NameSorter.Repositories
 
         public GetUnsortedListOfNames()
         {
+            NLog.LogManager.GetCurrentClassLogger().Info("GetUnsortedListOfNames() called...");
         }
 
+        /// <summary>
+        /// Reads the unsorted names from file and checks if the given names are valid.
+        /// </summary>
+        /// <returns>list of valid names of people</returns>
+        /// <param name="fileName">File name that contains the names of people</param>
         public List<Person> ReadFromFile(string fileName)
         {
             try
@@ -35,6 +40,7 @@ namespace NameSorter.Repositories
                                 givenNames[i] = fullName[i];
                             }
                             Person person = new Person(givenNames, lastName);
+                            NLog.LogManager.GetCurrentClassLogger().Info("{Person} add to list!"  , person);
                             unsortedNamesList.Add(person);
                         }
                     }

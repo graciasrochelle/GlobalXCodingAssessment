@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using NameSorter.Interfaces;
 using NameSorter.Repositories;
@@ -10,6 +9,7 @@ namespace NameSorter.Controllers
     {
         public NameSorterController()
         {
+            NLog.LogManager.GetCurrentClassLogger().Info("NameSorterController() called...");
         }
 
         public List<Person> GetListOfNames(List<Person> listOfNames)
@@ -17,14 +17,9 @@ namespace NameSorter.Controllers
             return (new GetSortedListOfNames().SortNames(listOfNames));
         }
 
-        public List<Person> GetListOfNames(string fileName)
+        public Boolean WriteToScreen(List<Person> unsortedListOfPeople, List<Person> sortedListOfPeople)
         {
-            return (new GetUnsortedListOfNames().ReadFromFile(fileName));
-        }
-
-        public Boolean WriteListOfNames(string fileName, List<Person> listOfNames)
-        {
-            return (new WriteSortedListOfNames().WriteToFile(fileName, listOfNames));
+            return (new WriteToScreen().WriteToConsole(unsortedListOfPeople, sortedListOfPeople));
         }
     }
 }

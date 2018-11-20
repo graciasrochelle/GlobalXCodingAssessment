@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
@@ -7,11 +6,17 @@ namespace NameSorter.Repositories
 {
     public class WriteSortedListOfNames
     {
-
         public WriteSortedListOfNames()
         {
+            NLog.LogManager.GetCurrentClassLogger().Info("WriteSortedListOfNames() called...");
         }
 
+        /// <summary>
+        /// Writes list of name to file.
+        /// </summary>
+        /// <returns><c>true</c>, if to file was written, <c>false</c> otherwise.</returns>
+        /// <param name="fileName">File name to be written.</param>
+        /// <param name="listOfNames">List of names to be written to file.</param>
         public Boolean WriteToFile(string fileName, List<Person> listOfNames)
         {
             try
@@ -25,6 +30,7 @@ namespace NameSorter.Repositories
                         else
                             writetext.Write(string.Format(listOfNames[i].ToString()));
                     }
+                    NLog.LogManager.GetCurrentClassLogger().Info("Write to File was successful!");
                     return true;
                 }
             }
