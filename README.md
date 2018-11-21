@@ -2,7 +2,7 @@
 Build a name sorter. Given a set of names, order that set first by last name, then by any given names the person my have. A name must have at least 1 given name and may have up to 3 given names.
 
 ## ScreenShot of output
-![alt text](ConsoleImage.png "Console Image")
+![Result on screen](ScreenShots/ConsoleImage.png "Result on screen")
 
 ## Motivation
 The GlobalX coding assessment for the role of a Junior Engineer.
@@ -20,7 +20,10 @@ Implemented using Dependency Injection to achieve safe, reliable and secure sour
 ### Logger
 - [NLog](https://github.com/NLog/NLog.Extensions.Logging/wiki/Getting-started-with-.NET-Core-2---Console-application)
 
-**nlog.config** _Add nlog.config in the same location as NameSorter.dll_
+**nlog.config** 
+
+_Add nlog.config in the same location as NameSorter.dll_
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
 <nlog xmlns="http://www.nlog-project.org/schemas/NLog.xsd"
@@ -45,26 +48,34 @@ Implemented using Dependency Injection to achieve safe, reliable and secure sour
 ### Testing Framework
 - [xUnit.net](https://xunit.github.io/docs/getting-started-dotnet-core)
 
-## Features
-- Takes two command line arguments - Argument 1 is the feature name and Argument 2 is the filename that contains the Names to be sorted:
-```
-cd GlobalXCodingAssessment/NameSorter
-dotnet run name-sorter ./unsorted-names-list.txt
-```
-
-Or set Visual Studion environment variables
-> Project -> Options -> Run -> Configuration -> Default -> Arguments -> `name-sorter ./unsorted-names-list.txt` -> OK
-
-- The program reads the file and sorts the set of names by last name. A name must have at least 1 given name and may have up to 3 given names
+## Description
+- The program reads the file and sorts the set of names by last name. 
+- If the last name of two people are the same the program then then by any given names the person my have. 
+- A name must have at least 1 given name and have at most to 3 given names
 - The program then writes the sorted set of names to a file `sorted-names-list.txt`
 - The program also prints the unsorted and sorted set of names on the screen once the program executes
+- The program takes two command line arguments 
+      - Argument 1 is the feature name and Argument 2 is the filename that contains the Names to be sorted:
+      
+            ```
+            cd GlobalXCodingAssessment/NameSorter
+            dotnet build
+            dotnet run name-sorter ./unsorted-names-list.txt
+            ```
+            
+      - Or set Visual Studion environment variables
+      
+      > Project -> Options -> Run -> Configuration -> Default -> Arguments -> `name-sorter ./unsorted-names-list.txt` -> OK
+
+![Setting Env Variables](ScreenShots/EnvVariables.png "Setting Env Variables")
 
 ## Installation
 - Step 1: Install Visual Studio or VSCode
 - Step 2: Clone the project
 - Step 3: Open Cloned project
-- Step 4: Clean and Build project
-- Step 5: Run project
+- Step 4: Restore NuGet Packages
+- Step 5: Clean and Build project
+- Step 6: Run project
 
 **Nuget Dependencies**
 - .Net version : `2.1.302`
@@ -75,19 +86,28 @@ Or set Visual Studion environment variables
 - xUnit.runner.visualstudio : `2.3.1`
 - Microsoft.NET.Test.Edk : `15.7.0`
 
-## Tests
-**Run tests via terminal**
-```
-cd GlobalXCodingAssessment
-dotnet test NameSorterTester/NameSorterTester.csproj
-```
+## How to use?
+_Note: Please ensure file that contains the names to be sorted is placed within the NameSorter Folder_
+
 **Run tests via IDE**
-- Step 1: Open cloned project
+- Step 1: Open cloned GlobalXCodingAssessment project
 - Step 2: Select `NameSorterTester-UnitTests`
 - Step 3: Run project
 
-## How to use?
-_Please ensure valid filename is passed and file is placed within the NameSorter Folder_
+**Run tests via terminal**
+```
+cd GlobalXCodingAssessment
+dotnet build
+dotnet test NameSorterTester/NameSorterTester.csproj
+```
+![Run tests via terminal](ScreenShots/RunningTestsThroughCmdLine.png "Run tests via terminal")
+
+**Run project via IDE**
+- Step 1: Open cloned GlobalXCodingAssessment project
+- Step 2: Select `NameSorter`
+- Step 3: Run project
+
+![Result on screen](ScreenShots/ConsoleImage.png "Result on screen")
 
 **Run project via terminal**
 ```
@@ -96,9 +116,4 @@ cd GlobalXCodingAssessment/NameSorter
 dotnet build
 dotnet run name-sorter ./unsorted-names-list.txt
 ```
-**Run test via terminal**
-```
-cd GlobalXCodingAssessment
-dotnet build
-dotnet test NameSorterTester/NameSorterTester.csproj
-```
+![Run project via terminal](ScreenShots/RunningThroughCmdLine.png "Run project via terminal")
