@@ -57,13 +57,14 @@ _Add nlog.config in the same location as NameSorter.dll_
 - The program takes two command line arguments 
       - Argument 1 is the feature name and Argument 2 is the filename that contains the Names to be sorted:
      
-            cd GlobalXCodingAssessment/NameSorter
-            dotnet build
-            dotnet run name-sorter ./unsorted-names-list.txt
+      cd GlobalXCodingAssessment/NameSorter
+      dotnet build
+      dotnet run name-sorter ./unsorted-names-list.txt
 
       - Or set Visual Studion environment variables
       
-      > Project -> Options -> Run -> Configuration -> Default -> Arguments -> `name-sorter ./unsorted-names-list.txt` -> OK
+      > Project -> Options -> Run -> Configuration -> Default -> Arguments -> 
+            `name-sorter ./unsorted-names-list.txt` -> OK
 
 ![Setting Env Variables](ScreenShots/EnvVariables.png "Setting Env Variables")
 
