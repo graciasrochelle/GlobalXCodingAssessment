@@ -26,11 +26,10 @@ namespace NameSorter
 
                 List<Person> unsortedListOfNames = fileSystem.ReadFromFile(filename);
 
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                _nameSorter.WriteToScreen(Constants.MessageBeforeSorting, unsortedListOfNames);
-                Console.ResetColor();
-
                 if (unsortedListOfNames != null){
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    _nameSorter.WriteToScreen(Constants.MessageBeforeSorting, unsortedListOfNames);
+                    Console.ResetColor();
 
                     List<Person> sortedListOfNames = _nameSorter.GetListOfNames(unsortedListOfNames);
 

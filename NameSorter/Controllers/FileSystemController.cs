@@ -11,14 +11,14 @@ namespace NameSorter.Controllers
             NLog.LogManager.GetCurrentClassLogger().Info("FileSystemController() called...");
         }
 
-        public Boolean ValidateIfFileExists(string filename)
+        public Boolean ValidateIfFileExists(string filePath)
         {
-            return (new ValidateIfFileExists().IsFileExists(filename));
+            return (new ValidateIfFileExists().IsFileExists(filePath));
         }
 
-        public List<Person> GetListOfNames(string fileName)
+        public List<Person> GetListOfNames(string filePath)
         {
-            return (new GetUnsortedListOfNames().ReadFromFile(fileName));
+            return (new GetUnsortedListOfNames().ReadFromFile(filePath));
         }
 
         public Boolean WriteToFile(string fileName, List<Person> listOfNames)

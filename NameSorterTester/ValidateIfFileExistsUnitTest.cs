@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using NameSorter.Controllers;
 using NameSorter.Interfaces;
 using Xunit;
@@ -10,19 +11,19 @@ namespace NameSorterTester
         [Fact]
         public void Test()
         {
-            var parent = System.IO.Directory
-                               .GetParent(Environment.CurrentDirectory)
-                               .Parent.Parent.Parent.FullName;
-            var pjFolder = "/NameSorter";
-            var pjFullPath = parent + pjFolder;
-
-            string inputFileName = System.IO.Path.GetFileName("./unsorted-names-list.txt");
-            string filePath = pjFullPath + "/" + inputFileName;
+            string arg1 = Path.GetFileName("./unit-test-unsorted-names-list.txt");
 
             IFileSystem fileSystem = new FileSystemController();
 
-            Boolean isFileExits = fileSystem.ValidateIfFileExists(filePath);
-            NLog.LogManager.GetCurrentClassLogger().Debug("\nFile Path: " + filePath);
+            var parent = Directory
+                              .GetParent(Environment.CurrentDirectory)
+                              .Parent.Parent.Parent.FullName;
+            var pjFolder = "/NameSorterTester";
+
+            string inputFilePath = parent + pjFolder + Utils.Constants.FilePath + arg1;
+
+            Boolean isFileExits = fileSystem.ValidateIfFileExists(inputFilePath);
+
             NLog.LogManager.GetCurrentClassLogger().Debug("\nFile Exists?: " + isFileExits);
             Assert.True(isFileExits);
         }

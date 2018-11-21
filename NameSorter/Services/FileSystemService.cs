@@ -23,31 +23,35 @@ namespace NameSorter.Services
         /// <param name="inputFileName">Input file name.</param>
         public List<Person> ReadFromFile(string inputFileName)
         {
-            Boolean isFileExits = _fileSystem.ValidateIfFileExists(inputFileName);
+            string inputFilePath = inputFileName;
+
+            Boolean isFileExits = _fileSystem.ValidateIfFileExists(inputFilePath);
             if(isFileExits){
-                String inputFilePath = Path.GetFullPath(inputFileName);
-                Console.WriteLine(inputFileName + " was read!\n");
-                return _fileSystem.GetListOfNames(inputFileName);
+                inputFilePath = Path.GetFullPath(inputFilePath);
+                Console.WriteLine(inputFilePath + " was read!\n");
+                return _fileSystem.GetListOfNames(inputFilePath);
             }
             return null;
         }
 
         /// <summary>
-        /// Writes to file if the file exists.
+        /// Writes list of people to file if the file.
         /// </summary>
-        /// <returns><c>true</c>, if file exists write to file, <c>false</c> otherwise.</returns>
+        /// <returns><c>true</c>, if list of people written, <c>false</c> otherwise.</returns>
         /// <param name="people">List of people to be written to file.</param>
         public Boolean WriteToFile(List<Person> people)
         {
-            String outputFilePath = Path.GetFullPath(Constants.OutputFileName);
-            Boolean isFileWritten = _fileSystem.WriteToFile(outputFilePath, people);
+            if(people!=null){
+                String outputFilePath = Path.GetFullPath(Constants.FilePath + Constants.OutputFileName);
+                Boolean isFileWritten = _fileSystem.WriteToFile(outputFilePath, people);
 
-            if (isFileWritten)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("\nThe names was written to " + outputFilePath);
-                Console.ResetColor();
-                return true;
+                if (isFileWritten)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\nThe names was written to " + outputFilePath);
+                    Console.ResetColor();
+                    return true;
+                }
             }
             return false;    
         }

@@ -5,8 +5,8 @@ namespace NameSorter.Interfaces
 {
     public interface IFileSystem
     {
-        Boolean ValidateIfFileExists(string filename);
-        List<Person> GetListOfNames(string fileName);
-        Boolean WriteToFile(string fileName, List<Person> listOfNames);
+        Boolean ValidateIfFileExists(string filePath);
+        List<Person> GetListOfNames(string filePath);
+        Boolean WriteToFile(string filepath, List<Person> listOfNames);
     }
 }

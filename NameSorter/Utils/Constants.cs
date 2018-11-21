@@ -1,8 +1,9 @@
-﻿using System;
-namespace NameSorter.Utils
+﻿namespace NameSorter.Utils
 {
     public static class Constants
     {
+        public const string FilePath = "Utils/TextFiles/";
+
         public const string OutputFileName = "sorted-names-list.txt";
         public const int MinNumberOfGivenNames = 1;
         public const int MaxNumberOfGivenNames = 3;

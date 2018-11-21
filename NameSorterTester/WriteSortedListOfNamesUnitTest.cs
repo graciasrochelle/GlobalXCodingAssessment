@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using NameSorter;
 using NameSorter.Controllers;
+using NameSorter.Repositories;
 using Xunit;
 
 namespace NameSorterTester
@@ -16,10 +17,10 @@ namespace NameSorterTester
             var parent = System.IO.Directory
                                .GetParent(Environment.CurrentDirectory)
                                .Parent.Parent.Parent.FullName;
-            var pjFolder = "/NameSorter";
+            var pjFolder = "/NameSorterTester";
             var pjFullPath = parent + pjFolder;
 
-            string filePath = pjFullPath + "/" + outputFileName;
+            string filePath = pjFullPath + Utils.Constants.FilePath + outputFileName;
 
             if(System.IO.File.Exists(filePath)){
                 System.IO.File.Delete(filePath);
@@ -44,5 +45,38 @@ namespace NameSorterTester
 
             Assert.True(isFileWritten);
         }
+
+        [Fact]
+        public void Test1()
+        {
+            string outputFileName = "unit-test-sorted-names-list1.txt";
+
+            var parent = System.IO.Directory
+                               .GetParent(Environment.CurrentDirectory)
+                               .Parent.Parent.Parent.FullName;
+            var pjFolder = "/NameSorterTester";
+            var pjFullPath = parent + pjFolder;
+
+            string filePath = pjFullPath + Utils.Constants.FilePath + outputFileName;
+
+            if (System.IO.File.Exists(filePath))
+            {
+                System.IO.File.Delete(filePath);
+            }
+            string inputFileName = System.IO.Path.GetFullPath("../../../Utils/TextFiles/unit-test-unsorted-names-list2.txt");
+
+            List<Person> unsortedListOfNames = new GetUnsortedListOfNames().ReadFromFile(inputFileName);
+
+            List<Person> people = new GetSortedListOfNames().SortNames(unsortedListOfNames);
+
+            Assert.NotNull(people);
+
+            Boolean isFileWritten = new FileSystemController().WriteToFile(filePath, people);
+
+            NLog.LogManager.GetCurrentClassLogger().Debug("\nFile Path: " + filePath);
+
+            Assert.True(isFileWritten);
+        }
+
     }
 }

@@ -19,7 +19,7 @@ namespace NameSorter.Repositories
         /// If LastName is equal Then take Next Given Name
         ///  If Next Given Name is equal Then take Next Given Name
         ///   If Next Given Name is equal Then take Next Given Name
-        ///    If Next Given Name is equal Then take Next Given Name
+        ///    compares given names and sorts the names
         public List<Person> SortNames(List<Person> unsortedListOfNames)
         {
             try{
@@ -60,12 +60,9 @@ namespace NameSorter.Repositories
                                     // Check if the length after re-sizing is greater than equal to 0
                                     if (p1_GivenNames.Length - 1 >= 0 && p2_GivenNames.Length - 1 >= 0)
                                     {
-                                        // Re-size given names array string
-                                        Array.Resize(ref p1_GivenNames, p1_GivenNames.Length - 1);
-                                        Array.Resize(ref p2_GivenNames, p2_GivenNames.Length - 1);
-
                                         // Compare
-                                        return CompareGivenNames(p1_GivenNames, p2_GivenNames);
+                                        compareNextGivenName = CompareGivenNames(p1_GivenNames, p2_GivenNames);
+                                        return compareNextGivenName;
                                     }
                                 }
                                 return compareNextGivenName;

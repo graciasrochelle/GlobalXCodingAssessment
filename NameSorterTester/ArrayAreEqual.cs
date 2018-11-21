@@ -3,11 +3,11 @@
     public static class ArrayAreEqual
     {
         /// <summary>
-        /// Arrayses the are equal.
+        /// Checks if two arrays are equal
         /// </summary>
-        /// <returns><c>true</c>, if are equal was arraysed, <c>false</c> otherwise.</returns>
-        /// <param name="obj1">Obj1.</param>
-        /// <param name="obj2">Obj2.</param>
+        /// <returns><c>true</c>, if arrays equal, <c>false</c> otherwise.</returns>
+        /// <param name="obj1">Array1</param>
+        /// <param name="obj2">Array2</param>
         internal static bool ArraysAreEqual(string[] obj1, string[] obj2)
         {
             if (obj1.Length != obj2.Length)

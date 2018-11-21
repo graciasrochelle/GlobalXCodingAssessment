@@ -7,7 +7,10 @@
             /// <summary>
             /// The entry point of the program, where the program control starts and ends.
             /// </summary>
-            /// <param name="args">Takes two command-line arguments :- argument 1 : feature name and argument 2 : input filename</param>
+            /// <param name="args">
+            /// Takes two command-line arguments 
+            ///     :- argument 1 : feature name and argument 2 : input filename
+            /// </param>
             static void Main(string[] args)
             {
                 Console.ForegroundColor = ConsoleColor.Green;

@@ -10,7 +10,7 @@ namespace NameSorter.Repositories
         public ValidateIfFileExists()
         {
             NLog.LogManager.GetCurrentClassLogger().Info("ValidateIfFileExists() called...");
-            _errorMessage = "File doesn't exists! Please ensure the input file exists!";
+            _errorMessage = "File doesn't exists! Please ensure the input file in NameSorter folder!";
         }
 
         /// <summary>

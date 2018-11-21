@@ -8,9 +8,7 @@ namespace NameSorterTester
 {
     public class ValidateFullNameUnitTest
     {
-        /// <summary>
-        /// Validates the full name test.
-        /// </summary>
+
         [Fact]
         public void Test()
         {
